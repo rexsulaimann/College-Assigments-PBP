@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>mywebsite</title>
-  <link rel="stylesheet" type="text/css" href="style/style.css">
+  <link rel="stylesheet" type="text/css" href="../style/style.css">
 </head>
 <body>
   <div id="container">
@@ -13,14 +13,15 @@
     <div id="sidebar">
       <h3>navigasi</h3>
       <ul id="navmenu">
-        <li><a href="index.html" class="selected">profil</a></li>
-        <li><a href="konten/galeri.php">galeri</a></li>
-        <li><a href="konten/jadwal.php">jadwal kuliah</a></li>
+        <li><a href="../index.php" class="selected">profil</a></li>
+        <li><a href="galeri.php">galeri</a></li>
+        <li><a href="jadwal.php">jadwal kuliah</a></li>
       </ul>
     </div>
 
     <div id="page">
-      <h2>Ini Halaman Utama</h2>
+      <h2>Halaman Galeri</h2>
+      <img src="../images/UIN.jpeg" alt="">
     </div>
 
     <div id="clear"></div>
