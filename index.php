@@ -14,7 +14,7 @@
     <div id="sidebar">
       <h3>navigasi</h3>
       <ul id="navmenu">
-        <li><a href="index.php" class="selected">profil</a></li>
+        <li><a href="?module=insert#pos" class="selected">Insert </a></li>
         <li><a href="?module=galeri#pos">galeri</a></li>
         <li><a href="?module=jadwal#pos">jadwal</a></li>
       </ul>
@@ -25,7 +25,7 @@
     <?php if(isset($_GET['module'])) 
     include "konten/$_GET[module].php";
   else 
-    include "konten/home.php";
+    include "konten/insert.php";
     ?>
 
     </div>

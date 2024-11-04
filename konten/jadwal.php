@@ -1,6 +1,6 @@
 <h2>Halaman Jadwal Kuliah</h2>
 
-      <table>
+      <table >
         <tr>
             <th>Senin</th>
             <th>Selasa</th>
