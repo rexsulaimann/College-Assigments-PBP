@@ -15,8 +15,8 @@
       <h3>navigasi</h3>
       <ul id="navmenu">
         <li><a href="?module=insert#pos" class="selected">Insert </a></li>
-        <li><a href="?module=galeri#pos">galeri</a></li>
-        <li><a href="?module=jadwal#pos">jadwal</a></li>
+        <li><a href="?module=view#pos">View</a></li>
+        <li><a href="?module=search#pos">Search</a></li>
       </ul>
     </div>
 
