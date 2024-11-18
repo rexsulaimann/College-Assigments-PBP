@@ -92,9 +92,10 @@ $result = $conn->query("SELECT * FROM users");
             <td><?php echo $row['email']; ?></td>
             <td><?php echo $row['phone']; ?></td>
             <td>
-    <a class="edit" href="edit.php?id=<?php echo $row['id']; ?>">Edit</a>
+    <a class="edit" href="index.php?module=edit&id=<?php echo $row['id']; ?>">Edit</a>
+
     <a class="delete" href="/?module=view&delete_id=<?php echo $row['id']; ?>" onclick="return confirm('Yakin ingin menghapus data ini?')">Delete</a>
-</td>
+            </td>
 
 <style>
     a.edit,

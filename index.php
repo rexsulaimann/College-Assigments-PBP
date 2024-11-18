@@ -22,7 +22,8 @@
 
     <div id="page">
       
-    <?php if(isset($_GET['module'])) 
+    <?php 
+    if(isset($_GET['module'])) 
     include "konten/$_GET[module].php";
   else 
     include "konten/insert.php";
