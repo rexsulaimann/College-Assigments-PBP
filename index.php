@@ -7,8 +7,7 @@
 <body>
   <div id="container">
     <div id="header">
-      <img src="images/UINJKT.gif" width="225" height="80">
-      <img src="images/Beetlejuice.gif" width="100" height="80">
+        <h1>PERTEMUAN I - SISTEM PAKAR</h1>
     </div>
 
     <div id="sidebar">

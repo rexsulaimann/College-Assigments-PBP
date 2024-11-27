@@ -1,16 +1,6 @@
 <?php
-// Koneksi ke database
-$servername = "localhost";
-$username = "root";
-$password = "kosong123";
-$dbname = "pbp";
 
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Periksa koneksi
-if ($conn->connect_error) {
-    die("Koneksi gagal: " . $conn->connect_error);
-}
+include "conn.php";
 
 // Hapus data jika ada permintaan
 if (isset($_GET['delete_id'])) {
