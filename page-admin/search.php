@@ -1,9 +1,9 @@
 <?php
 // Koneksi ke database
-include 'conn.php'; // File koneksi database
+include '../conn/conn.php'; // File koneksi database
 
 // Ambil data dari tabel `users`
-$query = "SELECT * FROM users";
+$query = "SELECT * FROM users WHERE role = 'user'";
 $result = $conn->query($query);
 
 if (!$result) {

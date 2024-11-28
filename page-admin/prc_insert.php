@@ -1,5 +1,5 @@
 <?php
-include "conn.php";
+include "../conn/conn.php";
 
 // Mendapatkan data dari form
 $first_name = $_POST['first_name'];
@@ -18,7 +18,7 @@ VALUES ('$first_name', '$last_name', '$username', '$password', '$age', '$gender'
 
 if ($conn->query($sql) === TRUE) {
     echo "Registrasi berhasil!";
-    header("Location: index.php"); // Mengarahkan kembali ke halaman index.php
+    header("Location: admin_dashboard.php");
     exit(); // Menghentikan eksekusi lebih lanjut setelah redirect
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;

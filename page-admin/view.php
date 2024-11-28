@@ -1,6 +1,6 @@
 <?php
 
-include "conn.php";
+include "../conn/conn.php";
 
 // Hapus data jika ada permintaan
 if (isset($_GET['delete_id'])) {
@@ -8,18 +8,18 @@ if (isset($_GET['delete_id'])) {
     if ($conn->query("DELETE FROM users WHERE id='$delete_id'") === TRUE) {
         echo "<script>
             alert('Data berhasil dihapus!');
-            window.location = '/?module=view#pos';
+            window.location = 'admin_dashboard.php?module=view#pos';
         </script>";
     } else {
         echo "<script>
             alert('Gagal menghapus data: " . $conn->error . "');
-            window.location = '/?module=view#pos';
+            window.location = 'admin_dashboard.php?module=view#pos';
         </script>";
     }
 }
 
 // Ambil data dari database
-$result = $conn->query("SELECT * FROM users");
+$result = $conn->query("SELECT * FROM users WHERE role='user'");
 ?>
 
 <!DOCTYPE html>
@@ -82,9 +82,9 @@ $result = $conn->query("SELECT * FROM users");
             <td><?php echo $row['email']; ?></td>
             <td><?php echo $row['phone']; ?></td>
             <td>
-    <a class="edit" href="index.php?module=edit&id=<?php echo $row['id']; ?>">Edit</a>
+    <a class="edit" href="admin_dashboard.php?module=edit&id=<?php echo $row['id']; ?>">Edit</a>
 
-    <a class="delete" href="/?module=view&delete_id=<?php echo $row['id']; ?>" onclick="return confirm('Yakin ingin menghapus data ini?')">Delete</a>
+    <a class="delete" href="admin_dashboard.php?module=view&delete_id=<?php echo $row['id']; ?>" onclick="return confirm('Yakin ingin menghapus data ini?')">Delete</a>
             </td>
 
 <style>

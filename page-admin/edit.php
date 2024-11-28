@@ -1,6 +1,6 @@
 <?php
 
-include "conn.php";
+include "../conn/conn.php";
 
 // Ambil data berdasarkan ID
 if (isset($_GET['id'])) {
@@ -34,12 +34,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         WHERE id='$id'") === TRUE) {
         echo "<script>
             alert('Data berhasil diperbarui!');
-            window.location.href = 'index.php?module=view#pos';
+            window.location.href = 'admin_dashboard.php?module=view#pos';
         </script>";
     } else {
         echo "<script>
             alert('Gagal memperbarui data: " . $conn->error . "');
-            window.location.href = 'index.php?module=edit&id=$id';
+            window.location.href = 'admin_dashboard.php?module=edit&id=$id';
         </script>";
     }
 }
@@ -86,7 +86,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </div>
         <div style="display: flex; justify-content: space-between;">
             <button type="submit" style="padding: 10px 20px; font-size: 16px; background-color: #4CAF50; color: white; border: none; border-radius: 4px; cursor: pointer;">Simpan Perubahan</button>
-            <a href="index.php?module=view#pos" style="padding: 10px 20px; font-size: 16px; background-color: #f44336; color: white; text-decoration: none; border-radius: 4px;">Batal</a>
+            <a href="admin_dashboard.php?module=view#pos" style="padding: 10px 20px; font-size: 16px; background-color: #f44336; color: white; text-decoration: none; border-radius: 4px;">Batal</a>
         </div>
     </form>
 </div>
