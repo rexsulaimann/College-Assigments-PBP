@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Nov 18, 2024 at 02:38 AM
+-- Generation Time: Nov 28, 2024 at 07:13 AM
 -- Server version: 5.5.16
 -- PHP Version: 8.1.10
 
@@ -37,24 +37,26 @@ CREATE TABLE `users` (
   `gender` varchar(10) NOT NULL,
   `birth_date` date NOT NULL,
   `email` varchar(100) NOT NULL,
-  `phone` varchar(15) NOT NULL
+  `phone` varchar(15) NOT NULL,
+  `role` varchar(10) NOT NULL DEFAULT 'user'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `first_name`, `last_name`, `username`, `password`, `age`, `gender`, `birth_date`, `email`, `phone`) VALUES
-(6, 'Ahmad', 'Fauzi', 'ahmad123', 'password1', 25, 'Laki-laki', '1998-01-01', 'ahmad@example.com', '081234567890'),
-(7, 'Siti', 'Nurhaliza', 'siti456', 'password2', 30, 'Perempuan', '1993-02-02', 'siti@example.com', '081234567891'),
-(8, 'Rahmat', 'Hidayat', 'rahmat789', 'password3', 28, 'Laki-laki', '1995-03-03', 'rahmat@example.com', '081234567892'),
-(9, 'Aisyah', 'Putri', 'aisyah123', 'password4', 22, 'Perempuan', '2001-04-04', 'aisyah@example.com', '081234567893'),
-(10, 'Ali', 'Imran', 'ali456', 'password5', 35, 'Laki-laki', '1988-05-05', 'ali@example.com', '081234567894'),
-(11, 'Fatimah', 'Zahra', 'fatimah789', 'password6', 29, 'Perempuan', '1994-06-06', 'fatimah@example.com', '081234567895'),
-(12, 'Muhammad', 'Rizky', 'rizky123', 'password7', 27, 'Laki-laki', '1996-07-07', 'rizky@example.com', '081234567896'),
-(13, 'Nurul', 'Hidayah', 'nurul456', 'password8', 23, 'Perempuan', '2000-08-08', 'nurul@example.com', '081234567897'),
-(14, 'Hendra', 'Saputra', 'hendra789', 'password9', 32, 'Laki-laki', '1991-09-09', 'hendra@example.com', '081234567898'),
-(15, 'Dewi', 'Kurnia', 'dewi123', 'password10', 26, 'Perempuan', '1997-10-10', 'dewi@example.com', '081234567899');
+INSERT INTO `users` (`id`, `first_name`, `last_name`, `username`, `password`, `age`, `gender`, `birth_date`, `email`, `phone`, `role`) VALUES
+(1, 'admin', 'admin', 'admin', 'admin', 1, 'admin', '2024-11-28', 'admin@admin', '0', 'admin'),
+(7, 'Siti', 'Nurhaliza', 'siti456', 'password2', 30, 'Perempuan', '1993-02-02', 'siti@example.com', '081234567891', 'user'),
+(8, 'Rahmat', 'Hidayat', 'rahmat789', 'password3', 28, 'Laki-laki', '1995-03-03', 'rahmat@example.com', '081234567892', 'user'),
+(9, 'Aisyah', 'Putri', 'aisyah123', 'password4', 22, 'Perempuan', '2001-04-04', 'aisyah@example.com', '081234567893', 'user'),
+(10, 'Ali', 'Imran', 'ali456', 'password5', 35, 'Laki-laki', '1988-05-05', 'ali@example.com', '081234567894', 'user'),
+(11, 'Fatimah', 'Zahra', 'fatimah789', 'password6', 29, 'Perempuan', '1994-06-06', 'fatimah@example.com', '081234567895', 'user'),
+(12, 'Muhammad', 'Rizky', 'rizky123', 'password7', 27, 'Laki-laki', '1996-07-07', 'rizky@example.com', '081234567896', 'user'),
+(13, 'Nurul', 'Hidayah', 'nurul456', 'password8', 23, 'Perempuan', '2000-08-08', 'nurul@example.com', '081234567897', 'user'),
+(14, 'Hendra', 'Saputra', 'hendra789', 'password9', 32, 'Laki-laki', '1991-09-09', 'hendra@example.com', '081234567898', 'user'),
+(15, 'Dewi', 'Kurnia', 'dewi123', 'password10', 26, 'Perempuan', '1997-10-10', 'dewi@example.com', '081234567899', 'user'),
+(22, 'andi', 'yusril', 'andi', 'andi', 20, 'Laki-laki', '2004-02-03', 'andi@yusril.com', '0998837281', 'user');
 
 --
 -- Indexes for dumped tables
@@ -75,7 +77,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
