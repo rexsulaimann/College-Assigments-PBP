@@ -2,17 +2,32 @@
 
 include "../conn/conn.php";
 
-// Ambil data berdasarkan ID yang ada di session
-session_start(); // Pastikan session dimulai
-if (isset($_SESSION['id'])) {
-    $id = $_SESSION['id']; // Ambil id dari session
-    $result = $conn->query("SELECT * FROM users WHERE id='$id'");
+// Ambil username dari sesi
+$username = $_SESSION['username'];
+
+// Query untuk mengambil data pengguna berdasarkan username
+$sql = "SELECT * FROM users WHERE username = '$username'";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
     $data = $result->fetch_assoc();
+    
+    $username = $data['username'];
+        // Query untuk mengambil data pengguna berdasarkan username
+        $sql = "SELECT * FROM users WHERE username = '$username'";
+        $result = $conn->query($sql);
+        $data = $result->fetch_assoc();
+    // dan seterusnya
 } else {
-    // Jika id tidak ada di session, arahkan ke halaman login atau berikan pesan error
-    header("Location: ../index.php");
-    exit;
+    echo "Tidak ada data pengguna yang ditemukan.";
 }
+
+// Ambil username dari sesi
+
+
+
+
+
 
 // Update data ke database
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -36,15 +51,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         birth_date='$birth_date',
         email='$email',
         phone='$phone'
-        WHERE id='$id'") === TRUE) {
+        WHERE id='{$data['id']}'") === TRUE) {
         echo "<script>
             alert('Data berhasil diperbarui!');
-            window.location.href = 'admin_dashboard.php?module=view#pos';
+            window.location.href = 'user_dashboard.php';
         </script>";
     } else {
         echo "<script>
             alert('Gagal memperbarui data: " . $conn->error . "');
-            window.location.href = 'admin_dashboard.php?module=edit&id=$id';
+            window.location.href = 'user_dashboard.php';
         </script>";
     }
 }
@@ -63,7 +78,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </div>
         <div style="margin-bottom: 15px;">
             <label for="username" style="display: block; font-weight: bold; margin-bottom: 5px;">Username:</label>
-            <input type="text" id="username" name="username" value="<?php echo $data['username']; ?>" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;">
+            <input type="text" id="username" name="username" value="<?php echo $data['username']; ?>" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;" readonly>
         </div>
         <div style="margin-bottom: 15px;">
             <label for="password" style="display: block; font-weight: bold; margin-bottom: 5px;">Password:</label>
@@ -91,7 +106,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </div>
         <div style="display: flex; justify-content: space-between;">
             <button type="submit" style="padding: 10px 20px; font-size: 16px; background-color: #4CAF50; color: white; border: none; border-radius: 4px; cursor: pointer;">Simpan Perubahan</button>
-            <a href="admin_dashboard.php?module=view#pos" style="padding: 10px 20px; font-size: 16px; background-color: #f44336; color: white; text-decoration: none; border-radius: 4px;">Batal</a>
+            
         </div>
     </form>
 </div>

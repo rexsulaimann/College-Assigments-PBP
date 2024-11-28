@@ -9,9 +9,6 @@ if (!isset($_SESSION['username']) || $_SESSION['role'] != 'user') {
     exit;
 }
 
-// Jika sudah login dan role adalah user, tampilkan dashboard user
-// echo "Welcome, user " . $_SESSION['username'];
-// ganti tulisan diatas dengan sweetalert
 
 ?>
 
