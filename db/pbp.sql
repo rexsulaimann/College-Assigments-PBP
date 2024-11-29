@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Nov 28, 2024 at 07:13 AM
+-- Generation Time: Nov 29, 2024 at 11:41 PM
 -- Server version: 5.5.16
 -- PHP Version: 8.1.10
 
@@ -29,15 +29,15 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
-  `first_name` varchar(50) NOT NULL,
-  `last_name` varchar(50) NOT NULL,
+  `first_name` varchar(50) DEFAULT NULL,
+  `last_name` varchar(50) DEFAULT NULL,
   `username` varchar(50) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `age` int(3) NOT NULL,
-  `gender` varchar(10) NOT NULL,
-  `birth_date` date NOT NULL,
+  `age` int(3) DEFAULT NULL,
+  `gender` varchar(10) DEFAULT NULL,
+  `birth_date` date DEFAULT NULL,
   `email` varchar(100) NOT NULL,
-  `phone` varchar(15) NOT NULL,
+  `phone` varchar(15) DEFAULT NULL,
   `role` varchar(10) NOT NULL DEFAULT 'user'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -56,7 +56,8 @@ INSERT INTO `users` (`id`, `first_name`, `last_name`, `username`, `password`, `a
 (13, 'Nurul', 'Hidayah', 'nurul456', 'password8', 23, 'Perempuan', '2000-08-08', 'nurul@example.com', '081234567897', 'user'),
 (14, 'Hendra', 'Saputra', 'hendra789', 'password9', 32, 'Laki-laki', '1991-09-09', 'hendra@example.com', '081234567898', 'user'),
 (15, 'Dewi', 'Kurnia', 'dewi123', 'password10', 26, 'Perempuan', '1997-10-10', 'dewi@example.com', '081234567899', 'user'),
-(22, 'andi', 'yusril', 'andi', 'andi', 20, 'Laki-laki', '2004-02-03', 'andi@yusril.com', '0998837281', 'user');
+(22, 'andi', 'yusril', 'andi', 'andi', 20, 'Laki-laki', '2004-02-03', 'andi@yusril.com', '0998837281', 'user'),
+(30, NULL, NULL, 'sulaiman', 'sulaiman', NULL, NULL, NULL, 'sulaiman@sulaiman.com', NULL, 'user');
 
 --
 -- Indexes for dumped tables
@@ -77,7 +78,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
