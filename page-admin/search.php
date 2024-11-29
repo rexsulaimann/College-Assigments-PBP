@@ -71,20 +71,39 @@ if (!$result) {
         </tr>
     </thead>
     <tbody>
-        <?php while ($row = $result->fetch_assoc()): ?>
-            <tr>
-                <td><?php echo $row['id']; ?></td>
-                <td><?php echo htmlspecialchars($row['first_name']); ?></td>
-                <td><?php echo htmlspecialchars($row['last_name']); ?></td>
-                <td><?php echo htmlspecialchars($row['username']); ?></td>
-                <td><?php echo htmlspecialchars($row['password']); ?></td>
-                <td><?php echo htmlspecialchars($row['age']); ?></td>
-                <td><?php echo htmlspecialchars($row['gender']); ?></td>
-                <td><?php echo htmlspecialchars($row['birth_date']); ?></td>
-                <td><?php echo htmlspecialchars($row['email']); ?></td>
-                <td><?php echo htmlspecialchars($row['phone']); ?></td>
-            </tr>
-        <?php endwhile; ?>
+    <?php while ($row = $result->fetch_assoc()): ?>
+    <tr>
+        <!-- ID: Selalu tampilkan karena tidak ada kemungkinan NULL pada ID -->
+        <td><?php echo htmlspecialchars($row['id']); ?></td>
+
+        <!-- First Name: Periksa jika kosong atau NULL -->
+        <td><?php echo !empty($row['first_name']) ? htmlspecialchars($row['first_name']) : '-'; ?></td>
+
+        <!-- Last Name: Periksa jika kosong atau NULL -->
+        <td><?php echo !empty($row['last_name']) ? htmlspecialchars($row['last_name']) : '-'; ?></td>
+
+        <!-- Username: Periksa jika kosong atau NULL -->
+        <td><?php echo !empty($row['username']) ? htmlspecialchars($row['username']) : '-'; ?></td>
+
+        <!-- Password: Periksa jika kosong atau NULL -->
+        <td><?php echo !empty($row['password']) ? htmlspecialchars($row['password']) : '-'; ?></td>
+
+        <!-- Age: Periksa jika kosong atau NULL -->
+        <td><?php echo !empty($row['age']) ? htmlspecialchars($row['age']) : '-'; ?></td>
+
+        <!-- Gender: Periksa jika kosong atau NULL -->
+        <td><?php echo !empty($row['gender']) ? htmlspecialchars($row['gender']) : '-'; ?></td>
+
+        <!-- Birth Date: Periksa jika kosong atau NULL -->
+        <td><?php echo !empty($row['birth_date']) ? htmlspecialchars($row['birth_date']) : '-'; ?></td>
+
+        <!-- Email: Periksa jika kosong atau NULL -->
+        <td><?php echo !empty($row['email']) ? htmlspecialchars($row['email']) : '-'; ?></td>
+
+        <!-- Phone: Periksa jika kosong atau NULL -->
+        <td><?php echo !empty($row['phone']) ? htmlspecialchars($row['phone']) : '-'; ?></td>
+    </tr>
+    <?php endwhile; ?>
     </tbody>
 </table>
 

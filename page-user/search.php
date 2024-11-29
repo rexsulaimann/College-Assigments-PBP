@@ -69,18 +69,32 @@ if (!$result) {
         </tr>
     </thead>
     <tbody>
-        <?php while ($row = $result->fetch_assoc()): ?>
-            <tr>
-                <td><?php echo $row['id']; ?></td>
-                <td><?php echo htmlspecialchars($row['first_name']); ?></td>
-                <td><?php echo htmlspecialchars($row['last_name']); ?></td>
-                <td><?php echo htmlspecialchars($row['age']); ?></td>
-                <td><?php echo htmlspecialchars($row['gender']); ?></td>
-                <td><?php echo htmlspecialchars($row['birth_date']); ?></td>
-                <td><?php echo htmlspecialchars($row['email']); ?></td>
-                <td><?php echo htmlspecialchars($row['phone']); ?></td>
-            </tr>
-        <?php endwhile; ?>
+    <?php while ($row = $result->fetch_assoc()): ?>
+    <tr>
+        <td><?php echo htmlspecialchars($row['id']); ?></td>
+
+        <!-- Periksa jika first_name kosong atau NULL -->
+        <td><?php echo !empty($row['first_name']) ? htmlspecialchars($row['first_name']) : '-'; ?></td>
+
+        <!-- Periksa jika last_name kosong atau NULL -->
+        <td><?php echo !empty($row['last_name']) ? htmlspecialchars($row['last_name']) : '-'; ?></td>
+
+        <!-- Periksa jika age kosong atau NULL -->
+        <td><?php echo !empty($row['age']) ? htmlspecialchars($row['age']) : '-'; ?></td>
+
+        <!-- Periksa jika gender kosong atau NULL -->
+        <td><?php echo !empty($row['gender']) ? htmlspecialchars($row['gender']) : '-'; ?></td>
+
+        <!-- Periksa jika birth_date kosong atau NULL -->
+        <td><?php echo !empty($row['birth_date']) ? htmlspecialchars($row['birth_date']) : '-'; ?></td>
+
+        <!-- Periksa jika email kosong atau NULL -->
+        <td><?php echo !empty($row['email']) ? htmlspecialchars($row['email']) : '-'; ?></td>
+
+        <!-- Periksa jika phone kosong atau NULL -->
+        <td><?php echo !empty($row['phone']) ? htmlspecialchars($row['phone']) : '-'; ?></td>
+    </tr>
+    <?php endwhile; ?>
     </tbody>
 </table>
 

@@ -3,32 +3,18 @@
 
 <div class="container" id="container">
 	<div class="form-container sign-up-container">
-		<form action="#">
+		<form action="prc/prc_register.php" method="POST">
 			<h1>Create Account</h1>
-			<div class="social-container">
-				<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-				<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
-				<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
-			</div>
-			<span>or use your email for registration</span>
-			<input type="email" placeholder="Email" />
-			<input type="text" placeholder="Username" />
-			<input type="password" placeholder="Password" />
-			<button>Sign Up</button>
+			<input name="email" type="email" placeholder="Email" required/>
+			<input name="username" type="text" placeholder="Username" required/>
+			<input name="password" type="password" placeholder="Password" required/>
+			<button type="submit">Sign Up</button>
 		</form>
 	</div>
 
 	<div class="form-container sign-in-container">
-		<form action="/prc/prc_login.php" method="POST">
+		<form action="prc/prc_login.php" method="POST">
 			<h1>Sign in</h1>
-			<div class="social-container">
-				<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-				<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
-				<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
-			</div>
-			<span>or use your account</span>
-	
-			<!-- Tambahkan name untuk input agar data bisa diterima oleh PHP -->
 			<input type="text" name="username" placeholder="Username" required />
 			<input type="password" name="password" placeholder="Password" required />
 			
